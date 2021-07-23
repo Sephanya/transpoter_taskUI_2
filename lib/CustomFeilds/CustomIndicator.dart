@@ -19,15 +19,15 @@ class CustomIndicator extends Decoration {
         required this.indicatorSize});
 
   @override
-  _MD2Painter createBoxPainter([VoidCallback? onChanged]) {
-    return new _MD2Painter(this, onChanged!);
+  _Painter createBoxPainter([VoidCallback? onChanged]) {
+    return new _Painter(this, onChanged!);
   }
 }
 
-class _MD2Painter extends BoxPainter {
+class _Painter extends BoxPainter {
   final CustomIndicator decoration;
 
-  _MD2Painter(this.decoration, VoidCallback onChanged)
+  _Painter(this.decoration, VoidCallback onChanged)
       : assert(decoration != null),
         super(onChanged);
 
