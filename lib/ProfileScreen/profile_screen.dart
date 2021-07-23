@@ -4,8 +4,8 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-import 'CustomBox.dart';
-import 'CustomIndicator.dart';
+import '../CustomFeilds/CustomBox.dart';
+import '../CustomFeilds/CustomIndicator.dart';
 import 'StarRating.dart';
 
 
@@ -29,39 +29,45 @@ class ProfileScreen extends StatelessWidget {
                 SaveAddress(),
                 ShopDashboard(),
                 //TabbarContent(),
-                Container(
-                  child: TabBar(
+                Padding(
+                    padding: const EdgeInsets.only(left: 10,),
+                  child: Container(
+                    child: TabBar(
 
-                      isScrollable: true,
-                      labelStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
-                      labelColor: Colors.black87,
-                      //indicatorColor: Color.fromRGBO(97, 54, 72, 1.0),
-                      indicatorPadding: EdgeInsets.only(left: 5),
-                      indicator: CustomIndicator(
-                        indicatorSize: CustomIndicatorSize.full,
-                        indicatorHeight: 3.0,
-                        indicatorColor: Color.fromRGBO(97, 54, 72, 1.0),
-                      ),
-                      tabs: [
-                        new Container(
-                          width: 80,
-                          child: new Tab(
-                            text: 'Orders',
-                          ),
+                        isScrollable: true,
+                        labelStyle: TextStyle(fontSize: 17,fontFamily: 'Sofia Pro', fontWeight: FontWeight.normal),
+                        labelColor: Colors.black87,
+                        //indicatorColor: Color.fromRGBO(97, 54, 72, 1.0),
+                        indicatorPadding: EdgeInsets.only(left: 10),
+                        indicator: CustomIndicator(
+                          indicatorSize: CustomIndicatorSize.full,
+                          indicatorHeight: 3.0,
+                          indicatorColor: Color.fromRGBO(97, 54, 72, 1.0),
                         ),
-                        new Container(
-                          width: 80,
-                          child: new Tab(
-                            text: 'Travels',
+                        tabs: [
+                          new Container(
+                            width: 70,
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 8.0),
+                              child: new Tab(
+                                text: 'Orders',
+                              ),
+                            ),
                           ),
-                        ),
-                      ]
+                          new Container(
+                            width: 70,
+                            child: new Tab(
+                              text: 'Travels',
+                            ),
+                          ),
+                        ]
+                    ),
                   ),
                 ),
                 Container(
                   child: Container(
                     height: 1000,
-                    color: Color.fromRGBO(236, 240, 248, 1.0),
+                    color: Color.fromRGBO(242, 243, 247, 1.0),
                     child: Column(
                       children: [
                         CustomBox(text: 'Pending'),
@@ -88,14 +94,15 @@ Widget TopHeader() {
     padding: const EdgeInsets.only(left: 20,right: 20,top: 30,bottom: 10),
     child: Row(
       children: <Widget>[
-        new Icon(Icons.arrow_back_ios, size: 28.0, color: Colors.black87),
+        new Icon(Icons.arrow_back_ios, size: 26.0, color: Colors.black87),
         new Expanded(
           child: new Padding(
             padding: const EdgeInsets.only(left: 20.0),
             child: new Text(
               "Profile",
               style: new TextStyle(
-                  fontSize: 20.0,
+                  fontSize: 18.0,
+                  fontFamily: 'Sofia Pro',
                   color: Colors.black87,
                   fontWeight: FontWeight.w600),
             ),
@@ -114,11 +121,11 @@ Widget ProfileRow() {
       children: <Widget>[
         CircleAvatar(
           minRadius: 35.0,
-          maxRadius: 35.0,
+          maxRadius: 37.0,
           backgroundImage: AssetImage("assets/images/profilepic.png"),
         ),
         Padding(
-          padding: const EdgeInsets.only(left: 20.0),
+          padding: const EdgeInsets.only(left: 20.0,top: 13),
           child: new Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisSize: MainAxisSize.min,
@@ -126,8 +133,9 @@ Widget ProfileRow() {
               Text(
                 'Austin Howards',
                 style: new TextStyle(
-                    fontSize: 20.0,
+                    fontSize: 19.0,
                     color: Colors.black87,
+                    fontFamily: 'Sofia Pro',
                     fontWeight: FontWeight.w700),
               ),
               //StarDisplay(),
@@ -165,13 +173,13 @@ Widget ProfileRow() {
 
 Widget LineSeperator() {
   return Padding(
-    padding: const EdgeInsets.only(left: 10, right: 10, top: 110),
+    padding: const EdgeInsets.only(left: 15, right: 15, top: 100),
     child: Row(
       children: <Widget>[
         Container(
           padding: EdgeInsets.all(5),
           child: Container(
-            width: 330,
+            width: 320,
             height: 1,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
@@ -191,7 +199,7 @@ Widget LineSeperator() {
 
 Widget VerifyBox() {
   return Padding(
-    padding: const EdgeInsets.only(left: 10, right: 10, top: 20),
+    padding: const EdgeInsets.only(left: 20, right: 20, top: 20),
     child: Container(
       width: 340,
       height: 50,
@@ -212,28 +220,29 @@ Widget VerifyBox() {
                 onPressed: () {},
                 icon: Image.asset(
                   "assets/images/verify.png",
-                  height: 20,
-                  width: 23,
+                  height: 22,
+                  width: 22,
                 )),
           ),
           new Expanded(
             child: new Padding(
-              padding: const EdgeInsets.only(left: 7.0),
+              padding: const EdgeInsets.only(left: 3.0),
               child: new Text(
                 "Verify the Profile",
                 style: new TextStyle(
                     fontSize: 16.0,
                     color: Color.fromRGBO(15, 114, 185, 1.0),
-                    fontWeight: FontWeight.w600),
+                    fontFamily: 'Sofia Pro',
+                    fontWeight: FontWeight.normal),
               ),
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(right: 8.0),
+            padding: const EdgeInsets.only(right: 20.0),
             child: Icon(
               Icons.arrow_forward_ios,
               color: Color.fromRGBO(15, 114, 185, 1.0),
-              size: 16,
+              size: 14,
             ),
           ),
         ],
@@ -244,7 +253,7 @@ Widget VerifyBox() {
 
 Widget UpgradePlan() {
   return Padding(
-    padding: const EdgeInsets.only(left: 2, right: 10, top: 10),
+    padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
     child: Row(
       children: <Widget>[
         Padding(
@@ -264,6 +273,7 @@ Widget UpgradePlan() {
               "Upgrade Plan",
               style: new TextStyle(
                   fontSize: 16.0,
+                  fontFamily: 'Sofia Pro',
                   color: Colors.black87,
                   fontWeight: FontWeight.normal),
             ),
@@ -276,7 +286,7 @@ Widget UpgradePlan() {
 
 Widget SaveAddress() {
   return Padding(
-    padding: const EdgeInsets.only(left: 2, right: 10, top: 2),
+    padding: const EdgeInsets.only(left: 10, right: 10, top: 1),
     child: Row(
       children: <Widget>[
         Padding(
@@ -296,6 +306,7 @@ Widget SaveAddress() {
               "Save Addresses",
               style: new TextStyle(
                   fontSize: 16.0,
+                  fontFamily: 'Sofia Pro',
                   color: Colors.black87,
                   fontWeight: FontWeight.normal),
             ),
@@ -308,7 +319,7 @@ Widget SaveAddress() {
 
 Widget ShopDashboard() {
   return Padding(
-    padding: const EdgeInsets.only(left: 2, right: 10, top: 2),
+    padding: const EdgeInsets.only(left: 10, right: 10, top: 1),
     child: Row(
       children: <Widget>[
         Padding(
@@ -328,6 +339,7 @@ Widget ShopDashboard() {
               "Shop DashBoard",
               style: new TextStyle(
                   fontSize: 16.0,
+                  fontFamily: 'Sofia Pro',
                   color: Colors.black87,
                   fontWeight: FontWeight.normal),
             ),
@@ -337,99 +349,99 @@ Widget ShopDashboard() {
     ),
   );
 }
-Widget Tabbarviews(){
-  return Padding(
-    padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
-    child: Container(
-      child: TabBar(
-
-           isScrollable: true,
-           labelStyle: TextStyle(fontSize: 16, fontWeight: FontWeight.normal),
-           labelColor: Colors.black87,
-           indicatorColor: Color.fromRGBO(97, 54, 72, 1.0),
-           indicatorPadding: EdgeInsets.only(left: 5),
-           tabs: [
-             new Container(
-               width: 80,
-               child: new Tab(
-                 text: 'Orders',
-               ),
-             ),
-             new Container(
-               width: 80,
-               child: new Tab(
-                 text: 'Travels',
-               ),
-             ),
-       ]
-       ),
-
-
-     ),
-
-
-  );
-}
-//
-// Widget TabbarContent(){
+// Widget Tabbarviews(){
 //   return Padding(
-//     padding: const EdgeInsets.only(left: 0, right: 0, top: 498),
+//     padding: const EdgeInsets.only(left: 10, right: 10, top: 10),
 //     child: Container(
-//       child:  TabBarView(
-//             children: <Widget>[
-//               SingleChildScrollView(
-//                 child: Container(
-//                   height: 1000,
-//                   color: Colors.grey[300],
-//                   child: Column(
-//                     children: [
-//                       CustomBox(text: 'Pending'),
-//                       CustomBox(text: 'In-Progress'),
+//       child: TabBar(
 //
-//                     ],
-//                   ),
+//            isScrollable: true,
+//            labelStyle: TextStyle(fontSize: 16, fontFamily: 'Sofia Pro',fontWeight: FontWeight.normal),
+//            labelColor: Colors.black87,
+//            indicatorColor: Color.fromRGBO(97, 54, 72, 1.0),
+//            indicatorPadding: EdgeInsets.only(left: 5),
+//            tabs: [
+//              new Container(
+//                width: 80,
+//                child: new Tab(
+//                  text: 'Orders',
+//                ),
+//              ),
+//              new Container(
+//                width: 80,
+//                child: new Tab(
+//                  text: 'Travels',
+//                ),
+//              ),
+//        ]
+//        ),
 //
-//                 ),
-//               ),
-//               Container(
-//                 child: Text('FisrtScreen'),
-//               ),
 //
-//             ],
-//         )
-//
-//       ),
+//      ),
 //
 //
 //   );
 // }
-// class TabContent extends StatelessWidget{
-//   @override
-//   Widget build(BuildContext context) {
-//     return Container(
-//       child: TabBarView(
-//         children: <Widget>[
-//           SingleChildScrollView(
-//             child: Container(
-//               height: 1000,
-//               color: Colors.grey[300],
-//               child: Column(
-//                 children: [
-//                   CustomBox(text: 'Pending'),
-//                   CustomBox(text: 'In-Progress'),
-//
-//                 ],
-//               ),
-//
-//             ),
-//           ),
-//           Container(
-//             child: Text('FisrtScreen'),
-//           ),
-//
-//         ],
-//       ),
-//     );
-//   }
-//
-// }
+// //
+// // Widget TabbarContent(){
+// //   return Padding(
+// //     padding: const EdgeInsets.only(left: 0, right: 0, top: 498),
+// //     child: Container(
+// //       child:  TabBarView(
+// //             children: <Widget>[
+// //               SingleChildScrollView(
+// //                 child: Container(
+// //                   height: 1000,
+// //                   color: Colors.grey[300],
+// //                   child: Column(
+// //                     children: [
+// //                       CustomBox(text: 'Pending'),
+// //                       CustomBox(text: 'In-Progress'),
+// //
+// //                     ],
+// //                   ),
+// //
+// //                 ),
+// //               ),
+// //               Container(
+// //                 child: Text('FisrtScreen'),
+// //               ),
+// //
+// //             ],
+// //         )
+// //
+// //       ),
+// //
+// //
+// //   );
+// // }
+// // class TabContent extends StatelessWidget{
+// //   @override
+// //   Widget build(BuildContext context) {
+// //     return Container(
+// //       child: TabBarView(
+// //         children: <Widget>[
+// //           SingleChildScrollView(
+// //             child: Container(
+// //               height: 1000,
+// //               color: Colors.grey[300],
+// //               child: Column(
+// //                 children: [
+// //                   CustomBox(text: 'Pending'),
+// //                   CustomBox(text: 'In-Progress'),
+// //
+// //                 ],
+// //               ),
+// //
+// //             ),
+// //           ),
+// //           Container(
+// //             child: Text('FisrtScreen'),
+// //           ),
+// //
+// //         ],
+// //       ),
+// //     );
+// //   }
+// //
+// // }

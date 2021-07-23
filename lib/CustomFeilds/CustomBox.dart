@@ -10,7 +10,7 @@ class CustomBox extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(left: 15.0,right: 15.0,top: 15),
+      padding: EdgeInsets.only(left: 20.0,right: 20.0,top: 15),
       child: Container(
         width: 700,
         height: 203,
@@ -34,6 +34,7 @@ class CustomBox extends StatelessWidget{
                 style: TextStyle(
                     color: Colors.grey[600],
                     fontSize: 12,
+                    fontFamily: 'Sofia Pro',
                     fontWeight: FontWeight.normal),
               ),
           ),
@@ -46,6 +47,7 @@ class CustomBox extends StatelessWidget{
                 style: TextStyle(
                     color: Colors.grey[900],
                     fontSize: 12,
+                    fontFamily: 'Sofia Pro',
                     fontWeight: FontWeight.normal),
               ),
             ),
@@ -54,7 +56,7 @@ class CustomBox extends StatelessWidget{
                 top: 35,
                 child: Container(
                   height: 0.5,
-                  width: 310,
+                  width: 300,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(80),
@@ -93,23 +95,25 @@ class CustomBox extends StatelessWidget{
             ),
             Positioned(
                 left: 80,
-                top: 55,
+                top: 60,
                 child: Text(  'Apple iPhone 12 Pro (128GB)',
                   textAlign: TextAlign.justify,
                   style: TextStyle(
                       color: Colors.black,
+                      fontFamily: 'Sofia Pro',
                       fontSize: 14,letterSpacing: 1.0,
                       fontWeight: FontWeight.bold),
                 )
             ),
             Positioned(
                 left: 80,
-                top: 75,
+                top: 83,
                 child: Text(  '- Graphite',
                   textAlign: TextAlign.justify,
                   style: TextStyle(
                       color: Colors.black,letterSpacing: 1.0,
                       fontSize: 14,
+                      fontFamily: 'Sofia Pro',
                       fontWeight: FontWeight.bold),
                 )
             ),
@@ -117,7 +121,7 @@ class CustomBox extends StatelessWidget{
               left: 10,
               top: 125,
               child: Container(
-                  width: 310,
+                  width: 300,
                   height: 60,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.only(
@@ -136,9 +140,9 @@ class CustomBox extends StatelessWidget{
                           child: Text(  'From',
                             textAlign: TextAlign.justify,
                             style: TextStyle(
-                                color: Colors.grey,letterSpacing: 1.0,
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold),
+                                color: Colors.grey,
+                                fontSize: 11,fontFamily: 'Sofia Pro',
+                                fontWeight: FontWeight.normal),
                           )
                       ),
                       Positioned(
@@ -148,21 +152,21 @@ class CustomBox extends StatelessWidget{
                             textAlign: TextAlign.justify,
                             style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold),
+                                fontSize: 13,fontFamily: 'Sofia Pro',
+                                fontWeight: FontWeight.normal),
                           )
                       ),
                       Positioned(
-                          left: 10,
+                          left: 15,
                           top: 8,
                           child: Image.asset(
                             "assets/images/flightup.png",
-                            width: 25,
-                            height: 45,
+                            width: 20,
+                            height: 40,
                           ),
                       ),
                       Positioned(
-                          left: 158,
+                          left: 150,
                           top: 10,
                           child: Container(
                             height: 40,
@@ -179,34 +183,34 @@ class CustomBox extends StatelessWidget{
                           )
                       ),
                       Positioned(
-                          left: 208,
+                          left: 200,
                           top: 13,
                           child: Text(  'Deliver to',
                             textAlign: TextAlign.justify,
                             style: TextStyle(
-                                color: Colors.grey,letterSpacing: 1.0,
-                                fontSize: 12,
-                                fontWeight: FontWeight.bold),
+                                color: Colors.grey,
+                                fontSize: 11,fontFamily: 'Sofia Pro',
+                                fontWeight: FontWeight.normal),
                           )
                       ),
                       Positioned(
-                          left: 208,
+                          left: 200,
                           top: 28,
                           child: Text(  'Modrid,Spain',
                             textAlign: TextAlign.justify,
                             style: TextStyle(
                                 color: Colors.black,
-                                fontSize: 14,
-                                fontWeight: FontWeight.bold),
+                                fontSize: 13,fontFamily: 'Sofia Pro',
+                                fontWeight: FontWeight.normal),
                           )
                       ),
                       Positioned(
-                          left: 175,
+                          left: 170,
                           top: 10,
                           child: Image.asset(
                             "assets/images/flightdown.png",
-                            width: 20,
-                            height: 35,
+                            width: 18,
+                            height: 40,
                           ),
                       ),
 
